@@ -287,7 +287,7 @@ class Thread:
 
     def _run_until_done(self):
         while self.run.status in ['queued', 'in_progress', "cancelling"]:
-            time.sleep(0.5)
+            time.sleep(5)
             self.run = self.client.beta.threads.runs.retrieve(
                 thread_id=self.thread.id,
                 run_id=self.run.id
